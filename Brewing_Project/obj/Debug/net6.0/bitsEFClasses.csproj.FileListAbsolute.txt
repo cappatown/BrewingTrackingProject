@@ -1,0 +1,15 @@
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.csproj.AssemblyReference.cache
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.AssemblyInfoInputs.cache
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.AssemblyInfo.cs
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.csproj.CoreCompileInputs.cache
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\bin\Debug\net6.0\mySqlSettingsExample.json
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\bin\Debug\net6.0\bitsEFClasses.deps.json
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\bin\Debug\net6.0\bitsEFClasses.runtimeconfig.json
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\bin\Debug\net6.0\bitsEFClasses.dll
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\bin\Debug\net6.0\bitsEFClasses.pdb
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.dll
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\refint\bitsEFClasses.dll
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.pdb
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\bitsEFClasses.genruntimeconfig.cache
+C:\Users\bossb\Desktop\CS 234N Advanced Programming C#\Final_Project\Brewing_Project\obj\Debug\net6.0\ref\bitsEFClasses.dll
