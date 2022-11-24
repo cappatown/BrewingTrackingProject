@@ -10,9 +10,11 @@ namespace bitsEFClassesTests
 {
     [TestFixture]
 
-    // Issue with test on line 78
+    // Issue with test on line 77
 
     // Having trouble with updating supplier_address, when I am able to do this, writing deleteSupplierAddressTest should be easy.
+
+    // This table is using foreign keys... I have more information about what I was thinking in the method
 
     public class SupplierAddressTests
     {
@@ -34,8 +36,7 @@ namespace bitsEFClassesTests
             Assert.AreEqual(1, supplierAddresses[0].SupplierId);
             Assert.AreEqual(1, supplierAddresses[0].AddressId);
             Assert.AreEqual(1, supplierAddresses[0].AddressTypeId);
-            PrintAll(supplierAddresses);
-            
+            PrintAll(supplierAddresses);           
         }
 
         [Test]
@@ -53,7 +54,9 @@ namespace bitsEFClassesTests
         public void GetWithJoinedSupplierTest()
         {
             /*
-            WIP
+            WIP I'm working on figuring this out.. I'd like you to check my SupplierTest Join method, if I got that right, I should be able to do this.
+
+            Want to get an opinion, while waiting I will work on something else.
             */
         }
 
@@ -83,15 +86,16 @@ namespace bitsEFClassesTests
             It did add something to the database it looks like, but I don't want to add, I want to update. It appears that it inserted 2 and 2
             into address_id and address_type_id, and put in it's own value for supplier_id?
 
-            These are foreign keys, so I don't believe I can use same methods as Primary keys.
+            These are foreign keys, so I don't believe I can use same methods as Primary keys. (Like Find() )
 
-            I believe to delete, I would want the same thing, to be able to access the index.
+            I believe to delete, I would want the same thing, to be able to access the index?
 
             */ 
 
             /* What I tried...
-            int index = supplierAddresses.FindIndex(sA => sA.SupplierId == 9 && sA.AddressId == 1 && sA.AddressTypeId == 1);
-            supplierAddresses[index] = new SupplierAddress();
+             
+            int index = supplierAddresses.FindIndex(sA => sA.SupplierId == 9 && sA.AddressId == 1 && sA.AddressTypeId == 1);  // Trying to find the index of the row
+            supplierAddresses[index] = new SupplierAddress(); // Trying to take the index of the row, putting it into a new SupplierAddress
 
             sA.AddressId = 2;
             sA.AddressTypeId = 2;
@@ -101,6 +105,7 @@ namespace bitsEFClassesTests
             Assert.AreEqual(2, sA.AddressId);
             Assert.AreEqual(2, sA.AddressTypeId);
             Console.WriteLine(supplierAddresses[index]);
+
             */
         }
 

@@ -10,10 +10,8 @@ namespace bitsEFClassesTests
 {
     [TestFixture]  
     
-    // Line 63 get with joined test not done.. Confused on how to do it, coming back to it
-
-    // I believe I should be joining THREE other tables to supplier.
-    // supplier needs to join with: supplier_address, address, address_type
+    // Line 68 get with joined test not done?? Could you please look at what I have and tell me if I am close? 
+    // Not sure how to confirm the join, and what I should assert to equal for confirmation
 
     public class SupplierTests
     {
@@ -32,7 +30,7 @@ namespace bitsEFClassesTests
         {
             // Test all fields
             suppliers = dbContext.Suppliers.OrderBy(s => s.SupplierId).ToList();
-            Assert.AreEqual(6, suppliers.Count());
+            Assert.AreEqual(9, suppliers.Count());
             Assert.AreEqual("BSG Craft Brewing", suppliers[0].Name);
             Assert.AreEqual("18003742739", suppliers[0].Phone);
             Assert.AreEqual("sales@bsgcraft.com", suppliers[0].Email);
@@ -65,9 +63,26 @@ namespace bitsEFClassesTests
         }
 
         [Test]
-        public void GetWithJoinedAddressesTest()
+        public void GetWithJoinedSupplierAddressTest()
         {
-            /*
+            // Will you look at this code down below? I based it off out or MMABooks lab.. I think it's joining.. but I am not sure? I am not really sure what I should assert equal to check this..
+
+            // I'm trying to connect my supplier database TO the supplier_address
+
+            // The supplier_id from the supplier data, should be joining with the supplier_id database, so we can hook up the same supplier_id to each database. Is this close?
+
+            var supplier = dbContext.Suppliers.Join(
+                dbContext.SupplierAddresses,
+                s => s.SupplierId,
+                sA => sA.SupplierId,
+                (s, sA) => new { s.SupplierId, s.Name, s.Phone, s.Email, s.Website, s.ContactFirstName, s.ContactLastName, s.ContactPhone, s.ContactEmail, s.Note }).OrderBy(r => r.SupplierId).ToList();
+            foreach (var s in supplier)
+            {
+                Console.WriteLine(s);
+            }
+
+
+            /*   NOT WORKING, IGNORE
              * There are 4 tables that need to be joined... Supplier has the supplier_id - which should be joined with
              * supplier_address - address_type - and address
              */
@@ -76,7 +91,7 @@ namespace bitsEFClassesTests
              I need to work on this more.. this was giving me errors: No overload for method 'Join' take 6 arguements. I'm confused if I am supposed
              to write all other tests first, before I can join?
              * 
-            var suppliers = dbContext.Suppliers.Join(
+            var suppliers = dbContext.Suppliers.Join(               --- GroupJoin maybe)
                 dbContext.SupplierAddresses,
                 dbContext.Addresses,
                 dbContext.AddressTypes,
@@ -88,8 +103,7 @@ namespace bitsEFClassesTests
 
         [Test]
         public void CreateSupplierTest()
-        {
-            
+        {           
             s = new Supplier();
             s.Name = "Riverbend Malt House";
             s.Phone = "8284501081";
@@ -105,7 +119,6 @@ namespace bitsEFClassesTests
             dbContext.SaveChanges();
             Assert.AreEqual("Riverbend Malt House", s.Name);
             Console.WriteLine(s);          
-
 
             // Created 2 more suppliers to be able to set sort bys
             /*
@@ -157,11 +170,11 @@ namespace bitsEFClassesTests
         [Test]
         public void UpdateSupplierTest()
         {
-            s = dbContext.Suppliers.Find(7);
+            s = dbContext.Suppliers.Find(11);
             s.ContactEmail = "doejohn@riverbendmalt.com";
 
             dbContext.SaveChanges();
-            s = dbContext.Suppliers.Find(7);
+            s = dbContext.Suppliers.Find(11);
             Assert.AreEqual("doejohn@riverbendmalt.com", s.ContactEmail);
             Assert.AreEqual("Riverbend Malt House", s.Name);
             Console.WriteLine(s);
@@ -174,10 +187,6 @@ namespace bitsEFClassesTests
                 Console.WriteLine(s);
             }
         }
-
-
-
-
 
 
     }

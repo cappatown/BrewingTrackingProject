@@ -10,6 +10,10 @@ namespace bitsEFClasses.Models
         public int AddressId { get; set; }
         public int AddressTypeId { get; set; }
 
+        public override string ToString()
+        {
+            return SupplierId + ", " + AddressId + ", " + AddressTypeId;
+        }
 
         public virtual Address Address { get; set; } = null!;
         public virtual AddressType AddressType { get; set; } = null!;

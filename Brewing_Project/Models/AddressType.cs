@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System;
 using System.Collections.Generic;
 
 namespace bitsEFClasses.Models
@@ -12,6 +13,11 @@ namespace bitsEFClasses.Models
 
         public int AddressTypeId { get; set; }
         public string? Name { get; set; }
+
+        public override string ToString()
+        {
+            return AddressTypeId + ", " + Name;
+        }
 
         public virtual ICollection<SupplierAddress> SupplierAddresses { get; set; }
     }
