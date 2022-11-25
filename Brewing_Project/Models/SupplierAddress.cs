@@ -15,8 +15,8 @@ namespace bitsEFClasses.Models
             return SupplierId + ", " + AddressId + ", " + AddressTypeId;
         }
 
-        public virtual Address Address { get; set; } = null!;
-        public virtual AddressType AddressType { get; set; } = null!;
-        public virtual Supplier Supplier { get; set; } = null!;
+        public virtual Address? Address { get; set; } //= null!;
+        public virtual AddressType? AddressType { get; set; } //= null!;
+        public virtual Supplier? Supplier { get; set; } //= null!;
     }
 }
