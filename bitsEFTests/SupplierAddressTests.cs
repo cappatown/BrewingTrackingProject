@@ -40,6 +40,17 @@ namespace bitsEFClassesTests
         }
 
         [Test]
+        public void GetSupplierAddressByPrimaryKey() // THIS IS NEW CODE I WROTE, AFTER I TURNED IN THE CLASSES TESTS, WROTE THIS DURING API TESTS
+        {
+            sA = dbContext.SupplierAddresses.Find(1, 1, 1);
+            Assert.IsNotNull(sA);
+            Assert.AreEqual(1, sA.SupplierId);
+            Assert.AreEqual(1, sA.AddressId);
+            Assert.AreEqual(1, sA.AddressTypeId);
+            Console.WriteLine(sA);
+        }
+
+        [Test]
         public void GetAddressIdandTypeIdUsingWhere()
         {
             // This test was a little confusing.. I cannot use .Find() because that says it finds PRIMARY keys, while this is a 
